@@ -1,4 +1,4 @@
-import { ArrowRight, Check, ClipboardList, FileSpreadsheet, GraduationCap, Monitor, RefreshCw, UserRound } from "lucide-react";
+import { ArrowRight, Check, ClipboardList, Code2, FileSpreadsheet, GraduationCap, Monitor, RefreshCw, UserRound } from "lucide-react";
 import { ThreatViews } from "@/components/threat-views";
 
 export function ProjectArt({ id }: { id: string }) {
@@ -13,11 +13,11 @@ export function ProjectArt({ id }: { id: string }) {
             <RefreshCw size={15} className="art-refresh text-mint" />
           </div>
           <div className="mt-3 grid grid-cols-3 gap-2">
-            {["Production", "Status", "Shift"].map((label, index) => (
+            {["Employees", "Data feed", "Refresh"].map((label, index) => (
               <div key={label} className="rounded-md border border-steel bg-navy/70 p-2">
                 <div className={`mb-2 size-1.5 rounded-full ${index === 1 ? "bg-amber" : "bg-mint"}`} />
                 <span className="text-[10px]">{label}</span>
-                <span className="mt-2 block h-1 w-3/4 rounded bg-steel" />
+                <span className="mt-2 block text-xs font-bold text-white">{["150+", "CSV", "3 min"][index]}</span>
               </div>
             ))}
           </div>
@@ -47,11 +47,13 @@ export function ProjectArt({ id }: { id: string }) {
   if (id === "haribo-reporting") {
     return (
       <div className="artboard bg-sand" aria-hidden="true">
-        <div className="art-frame flex w-full max-w-[340px] items-center justify-center gap-3 border-amber/50 bg-white/85 p-4 sm:gap-6">
+        <div className="art-frame flex w-full max-w-[340px] items-center justify-center gap-1.5 border-amber/50 bg-white/85 p-2 sm:gap-3 sm:p-4">
           <div className="grid gap-1.5">
-            {["Workbook A", "Workbook B", "Workbook C"].map((label) => <span key={label} className="flex items-center gap-1.5 rounded border border-line bg-surface px-2 py-1.5 text-[10px]"><FileSpreadsheet size={14} className="text-teal" />{label}</span>)}
+            {["Excel A", "Excel B", "Excel C"].map((label) => <span key={label} className="flex items-center gap-1.5 rounded border border-line bg-surface px-1.5 py-1.5 text-[10px]"><FileSpreadsheet size={14} className="text-teal" />{label}</span>)}
           </div>
-          <ArrowRight size={20} className="shrink-0 text-teal" />
+          <ArrowRight size={14} className="shrink-0 text-teal" />
+          <div className="grid shrink-0 justify-items-center gap-1 text-[10px] font-bold"><Code2 size={20} className="text-teal" />Java / POI</div>
+          <ArrowRight size={14} className="shrink-0 text-teal" />
           <div className="grid justify-items-center gap-1.5 text-center text-[10px] font-bold"><ClipboardList size={29} className="text-teal" />Weekly report</div>
         </div>
       </div>
@@ -60,10 +62,10 @@ export function ProjectArt({ id }: { id: string }) {
 
   return (
     <div className="artboard bg-mist" aria-hidden="true">
-      <div className="art-frame flex w-full max-w-[350px] items-center gap-3 border-line bg-white p-3 sm:p-4">
-        <div className="flex-1 rounded-lg bg-navy p-3 text-white"><Monitor size={17} className="mb-2 text-mint" /><p className="text-[10px] font-bold">Instructor</p><span className="mt-2 block h-1.5 w-4/5 rounded bg-steel" /></div>
+      <div className="art-frame flex w-full max-w-[350px] items-center gap-1.5 border-line bg-white p-2 sm:gap-3 sm:p-4">
+        <div className="min-w-0 flex-1 rounded-lg bg-navy p-2 text-white sm:p-3"><Monitor size={17} className="mb-2 text-mint" /><p className="text-[10px] font-bold">Instructor</p><span className="mt-2 block h-1.5 w-4/5 rounded bg-steel" /></div>
         <span className="grid shrink-0 justify-items-center gap-1 text-[9px] font-bold text-teal"><span className="size-2 rounded-full bg-accent" />Live sync</span>
-        <div className="flex-1 rounded-lg bg-mist p-3 text-ink"><UserRound size={17} className="mb-2 text-teal" /><p className="text-[10px] font-bold">Student</p><span className="mt-1 flex items-center gap-1 text-[9px]"><Check size={10} /> Checkpoint</span></div>
+        <div className="min-w-0 flex-1 rounded-lg bg-mist p-2 text-ink sm:p-3"><UserRound size={17} className="mb-2 text-teal" /><p className="text-[10px] font-bold">Student</p><span className="mt-1 flex items-center gap-1 text-[9px]"><Check className="shrink-0" size={10} /> Checkpoint</span></div>
       </div>
     </div>
   );

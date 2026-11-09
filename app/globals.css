@@ -134,3 +134,9 @@ dialog::backdrop { background: rgb(16 29 46 / 66%); }
 @media (prefers-reduced-motion: no-preference) {
   .art-view { animation: enter 180ms ease-out; }
 }
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .hobby-tile svg { transition: transform 200ms ease; }
+  .hobby-tile:hover svg { transform: translateY(-3px) rotate(-6deg); }
+  .project-story:focus-within { border-color: var(--color-accent); }
+}

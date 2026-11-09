@@ -21,6 +21,7 @@ export type Project = {
   title: string;
   category: string;
   summary: string;
+  role: string;
   contribution: string;
   outcome: string;
   stack: readonly string[];
@@ -34,6 +35,7 @@ export const projects: readonly Project[] = [
     title: "Twin Disc Manufacturing Dashboard",
     category: "Twin Disc / Internal web app",
     summary: "Production information, without the manual refresh.",
+    role: "Built and deployed the IIS dashboard and connected its CSV data.",
     contribution: "I built and deployed the dashboard on IIS using HTML, CSS, and JavaScript. It reads structured CSV files and refreshes production views every three minutes.",
     outcome: "Replaced manually updated Excel production displays for 150+ shop-floor employees.",
     stack: ["HTML", "CSS", "JavaScript", "IIS", "CSV"],
@@ -44,6 +46,7 @@ export const projects: readonly Project[] = [
     title: "IP Threat Assessment",
     category: "Cybersecurity / Internal web app",
     summary: "One IP address, two levels of detail.",
+    role: "Built the React frontend and integrated the FastAPI endpoints.",
     contribution: "I worked alongside a cybersecurity intern on an internal tool for the IT team. I built the React and TypeScript frontend and connected it to the FastAPI backend my teammate developed.",
     outcome: "The tool brings together VirusTotal, Shodan, and GreyNoise findings in a general summary and a more detailed technical view.",
     stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "FastAPI", "REST APIs"],
@@ -53,6 +56,7 @@ export const projects: readonly Project[] = [
     title: "GradTracker",
     category: "Full-stack web app / Four-person team",
     summary: "Degree planning that’s easier to follow.",
+    role: "Built admin features and sign-in flows, and wrote frontend tests.",
     contribution: "Our four-person team built GradTracker for students and academic advisors. I worked on administration pages, search and sorting, sign-in flows, and protected routes. I also wrote automated tests with Vitest and React Testing Library.",
     outcome: "University team project for students and academic advisors. The frontend source is public.",
     stack: ["Next.js", "TypeScript", "Supabase", "Vitest", "React Testing Library"],
@@ -63,6 +67,7 @@ export const projects: readonly Project[] = [
     title: "HARIBO Supply Chain Reporting",
     category: "Business process automation / Industry project",
     summary: "Less time preparing reports. More time for the actual work.",
+    role: "Wrote the Java reporting tool and validated its output with the reporting manager.",
     contribution: "I developed a Java application with Apache POI to turn three Excel files into one structured weekly report. I gathered requirements with the reporting manager and validated the output against business needs.",
     outcome: "Replaced manual report preparation and reduced preparation time by an estimated 75%.",
     stack: ["Java", "Apache POI", "Excel"],
@@ -72,6 +77,7 @@ export const projects: readonly Project[] = [
     title: "Lab Checkpoint Sign-Off Application",
     category: "Full-stack app / Team prototype",
     summary: "Lab check-ins, updated in real time.",
+    role: "Connected instructor and student views using WebSockets.",
     contribution: "On a four-person team, I implemented WebSocket communication between React and Spring Boot so instructors and students could see checkpoint updates and help requests without refreshing.",
     outcome: "The four-person university prototype included instructor-generated join codes, student sign-ins, live checkpoint updates, and CSV exports for Canvas.",
     stack: ["React", "Spring Boot", "MongoDB", "WebSockets"],
@@ -95,10 +101,10 @@ export const experience: readonly { employer: string; location: string; roles: r
       dates: "May 2026 – August 2026",
       contributions: [],
       highlights: [
-        { title: "Manufacturing Dashboard", description: "I built an internal production display to replace manually updated Excel screens.", href: "/projects/manufacturing-dashboard" },
-        { title: "IP Threat Assessment", description: "I built a frontend that helps IT staff review IP reputation through general and technical views.", href: "/projects#ip-threat-assessment" },
-        { title: "Ethics & Compliance", description: "I built an interface for submissions, approvals, progress dashboards, and activity tracking." },
-        { title: "Power BI Migration & Data Validation", description: "I gathered feedback from business stakeholders, including executive leadership, during the move from QlikView to Power BI. I compared reports, exported data to Excel, and used an approved AI assistant to investigate discrepancies. I documented findings for IT and worked with Microsoft Fabric and Power BI data workflows." },
+        { title: "Manufacturing Dashboard", description: "I built and deployed a dashboard in HTML, CSS, and JavaScript on IIS. It replaces manually updated Excel screens with CSV-based views that refresh every three minutes for 150+ shop-floor employees.", href: "/projects/manufacturing-dashboard" },
+        { title: "IP Threat Assessment", description: "I built the React and TypeScript frontend and integrated the FastAPI REST endpoints. IT staff can review findings from VirusTotal, Shodan, and GreyNoise in General and Technical views.", href: "/projects#ip-threat-assessment" },
+        { title: "Ethics & Compliance", description: "I built a Next.js and TypeScript interface for submissions, approval workflows, progress dashboards, and activity tracking." },
+        { title: "Power BI Migration & Data Validation", description: "During the QlikView to Power BI migration, I gathered feedback from business stakeholders, including executive leadership. I compared reports, exported data to Excel, and used a company-approved AI assistant to investigate discrepancies. I documented findings and worked with Microsoft Fabric and Power BI workflows." },
       ],
     }],
   },

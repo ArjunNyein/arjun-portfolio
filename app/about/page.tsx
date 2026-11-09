@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CheckCheck, Code2, Compass, Dumbbell, Mountain, Sparkles, Utensils } from "lucide-react";
+import { CheckCheck, Code2, Compass, Dumbbell, Wrench, Sparkles, Utensils } from "lucide-react";
 import { ResumeLink } from "@/components/site";
 import { profile, toolbox } from "@/content/portfolio";
 
@@ -26,7 +26,7 @@ export default function About() {
             <div className="mt-5 max-w-[650px] space-y-3.5 sm:text-lg">
               <p>I’m studying Computer Science at UW–Parkside and graduating in May 2027.</p>
               <p>I enjoy building tools that make everyday work simpler. So far, that has taken me from campus IT to software development and data projects during my internship at Twin Disc.</p>
-              <p>I like getting close to a problem, understanding how people actually work, and building something that makes their day a little easier.</p>
+              <p>I’m drawn to full-stack development and projects where data helps solve a practical problem. I like learning a new tool by putting it to work on something useful.</p>
             </div>
           </div>
           <div className="space-y-5">
@@ -66,9 +66,15 @@ export default function About() {
         <div className="shell grid items-center gap-5 py-8 sm:grid-cols-[1fr_auto]">
           <div>
             <h2 id="outside" className="text-2xl">Outside of technology</h2>
-            <p className="mt-2">Outside of school and projects, I’m usually lifting, cooking, or getting outside for a run or a hike.</p>
+            <p className="mt-2">I’m a gym rat, and outside of technology I enjoy cooking and working on my car.</p>
           </div>
-          <div className="flex gap-5 text-teal" aria-hidden="true"><Dumbbell size={25} /><Utensils size={24} /><Mountain size={25} /></div>
+          <div className="flex flex-wrap gap-2.5" aria-hidden="true">
+            {[{ icon: Dumbbell, label: "Fitness" }, { icon: Utensils, label: "Cooking" }, { icon: Wrench, label: "Car work" }].map(({ icon: Icon, label }) => (
+              <div key={label} className="hobby-tile grid min-w-20 justify-items-center gap-2 rounded-xl border border-amber/40 bg-white/65 px-3 py-3 text-xs font-semibold text-ink">
+                <Icon className="text-teal" size={22} />{label}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       <section className="shell py-11 sm:py-16" aria-labelledby="toolbox">
