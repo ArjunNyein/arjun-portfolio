@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { ProjectCard } from "@/components/project-card";
+import { SignalTrace } from "@/components/signal-trace";
 import { HomeIllustration } from "@/components/home-illustration";
 import { projects } from "@/content/portfolio";
 
@@ -9,10 +10,11 @@ export default function Home() {
     <>
       <section className="hero-surface border-t border-steel/40 bg-navy text-white">
         <div className="shell grid items-center gap-10 py-12 md:grid-cols-[1.3fr_1fr] lg:gap-20 lg:py-20">
-          <div>
+          <div className="group relative isolate">
+            <SignalTrace className="absolute -top-8 right-0 -z-10 w-32 text-mint/35 sm:w-44" />
             <p className="eyebrow mb-5 flex items-center gap-3 text-mint"><span className="h-px w-7 bg-mint" /> MY WORK</p>
             <h1 className="max-w-[720px] text-[clamp(2.5rem,5.6vw,5.15rem)] tracking-[-0.05em]">
-              A few projects worth <span className="text-mint">a closer look.</span>
+              Real problems. <span className="text-mint">Working code.</span>
             </h1>
             <p className="mt-5 max-w-[580px] text-cloud sm:text-lg">
               From manufacturing dashboards to full-stack applications, explore some of the projects I’ve worked on and the problems I’ve helped solve.

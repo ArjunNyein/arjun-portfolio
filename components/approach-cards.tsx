@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, CheckCheck, Code2, Compass, Plus } from "lucide-react";
+import { Check, CheckCheck, Code2, Compass, Sparkles } from "lucide-react";
 import { useApproachReveal } from "@/components/approach-reveal-provider";
 
 const steps = [
@@ -57,7 +57,7 @@ export function ApproachCards() {
                   {sentence}
                 </span>
                 <span aria-hidden="true" className="approach-prompt col-start-1 row-start-1 flex items-center gap-2 text-sm font-semibold text-teal">
-                  <Plus size={16} /> Click to reveal
+                  <Sparkles size={16} /> Peek under the hood!
                 </span>
               </span>
             </button>

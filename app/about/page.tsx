@@ -79,8 +79,8 @@ export default function About() {
       <section className="bg-sand" aria-labelledby="outside">
         <div className="shell grid items-center gap-5 py-8 sm:grid-cols-[1fr_auto]">
           <div>
-            <h2 id="outside" className="text-2xl">Outside of technology</h2>
-            <p className="mt-2">I’m a gym rat, and outside of technology I enjoy cooking and working on my car.</p>
+            <h2 id="outside" className="text-2xl">Away from the keyboard</h2>
+            <p className="mt-2">I’m a gym rat who also likes cooking and working on my car.</p>
           </div>
           <div className="flex flex-wrap gap-2.5" aria-hidden="true">
             {[{ icon: Dumbbell, label: "Fitness" }, { icon: Utensils, label: "Cooking" }, { icon: Wrench, label: "Car work" }].map(({ icon: Icon, label }) => (
