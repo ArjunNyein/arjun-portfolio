@@ -1,4 +1,5 @@
 import { ArrowRight, Check, ClipboardList, Code2, FileSpreadsheet, GraduationCap, Monitor, RefreshCw, UserRound } from "lucide-react";
+import { SignalTrace } from "@/components/signal-trace";
 import { ThreatViews } from "@/components/threat-views";
 
 export function ProjectArt({ id }: { id: string }) {
@@ -6,7 +7,8 @@ export function ProjectArt({ id }: { id: string }) {
 
   if (id === "manufacturing-dashboard") {
     return (
-      <div className="artboard hero-surface bg-navy text-cloud" aria-hidden="true">
+      <div className="group artboard hero-surface relative isolate bg-navy text-cloud" aria-hidden="true">
+        <SignalTrace className="absolute right-2 bottom-2 -z-10 w-40 text-mint/30" />
         <div className="art-frame w-full max-w-[360px] border-steel bg-panel p-4">
           <div className="flex items-center justify-between border-b border-steel pb-3 text-xs font-bold text-white">
             <span className="flex items-center gap-2"><Monitor size={16} className="text-mint" /> Production overview</span>
@@ -61,7 +63,8 @@ export function ProjectArt({ id }: { id: string }) {
   }
 
   return (
-    <div className="artboard bg-mist" aria-hidden="true">
+    <div className="group artboard relative isolate bg-mist" aria-hidden="true">
+      <SignalTrace className="absolute right-2 bottom-2 -z-10 w-36 text-accent/30" />
       <div className="art-frame flex w-full max-w-[350px] items-center gap-1.5 border-line bg-white p-2 sm:gap-3 sm:p-4">
         <div className="min-w-0 flex-1 rounded-lg bg-navy p-2 text-white sm:p-3"><Monitor size={17} className="mb-2 text-mint" /><p className="text-[10px] font-bold">Instructor</p><span className="mt-2 block h-1.5 w-4/5 rounded bg-steel" /></div>
         <span className="grid shrink-0 justify-items-center gap-1 text-[9px] font-bold text-teal"><span className="size-2 rounded-full bg-accent" />Live sync</span>

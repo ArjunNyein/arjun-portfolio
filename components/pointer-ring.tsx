@@ -11,9 +11,11 @@ export function PointerRing() {
 
     const suitable = window.matchMedia("(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)");
     let frame = 0;
+    let pulse: Animation | undefined;
 
     const hide = () => {
       cancelAnimationFrame(frame);
+      pulse?.cancel();
       element.removeAttribute("data-visible");
     };
 
@@ -43,9 +45,23 @@ export function PointerRing() {
       });
     };
 
+    const press = (event: PointerEvent) => {
+      move(event);
+      if (!suitable.matches || event.pointerType !== "mouse" || event.button !== 0) return;
+
+      const target = event.target instanceof Element ? event.target : null;
+      if (!target?.closest("a, button, summary") || target.closest("dialog")) return;
+
+      pulse?.cancel();
+      pulse = element.animate(
+        [{ transform: "scale(0.78)" }, { transform: "scale(1.1)", offset: 0.6 }, { transform: "scale(1)" }],
+        { duration: 230, easing: "ease-out" },
+      );
+    };
+
     window.addEventListener("pointermove", move, { passive: true });
     window.addEventListener("blur", hide);
-    window.addEventListener("pointerdown", hide, { passive: true });
+    window.addEventListener("pointerdown", press, { passive: true });
     document.documentElement.addEventListener("pointerleave", hide);
     suitable.addEventListener("change", hide);
 
@@ -53,7 +69,7 @@ export function PointerRing() {
       hide();
       window.removeEventListener("pointermove", move);
       window.removeEventListener("blur", hide);
-      window.removeEventListener("pointerdown", hide);
+      window.removeEventListener("pointerdown", press);
       document.documentElement.removeEventListener("pointerleave", hide);
       suitable.removeEventListener("change", hide);
     };

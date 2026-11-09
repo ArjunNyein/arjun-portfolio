@@ -1,53 +1,68 @@
-import { CheckCheck, ChevronDown, Code2, Compass } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { CheckCheck, Code2, Compass, Minus, Plus } from "lucide-react";
 
 const steps = [
   {
     icon: Compass,
     title: "Understand the problem",
-    summary: "Start by seeing how people do the work today.",
-    detail: "I like walking through the current process with the people who use it. Seeing where they get stuck or repeat the same steps helps me build something that fits their workflow.",
+    sentence: "I like learning how people currently do things before deciding what needs to change.",
   },
   {
     icon: Code2,
     title: "Build something useful",
-    summary: "Make the next step clear for the person using it.",
-    detail: "I start with the part of the problem that would make the biggest difference. Then I try to make that part easy to use, with clear labels and fewer steps to get the job done.",
+    sentence: "I focus on making applications understandable and practical for the people who will use them.",
   },
   {
     icon: CheckCheck,
     title: "Check the details",
-    summary: "Test the result the way someone would actually use it.",
-    detail: "I test the main workflow, check the information it shows, and try a few cases outside the happy path. I want the result to hold up in real use.",
+    sentence: "I test my work, validate information, and make sure the finished result does what it should.",
   },
 ];
 
 export function ApproachCards() {
+  const [activeStep, setActiveStep] = useState<number | null>(null);
+
   return (
-    <ol className="mt-6 grid items-start gap-4 md:grid-cols-3">
-      {steps.map(({ icon: Icon, title, summary, detail }, index) => (
-        <li key={title}>
-          <details className="approach-card group card overflow-hidden open:border-accent open:shadow-md open:shadow-accent/10" data-pointer-card>
-            <summary className="block list-none rounded-2xl p-5 outline-offset-[-4px] hover:bg-mist/60 sm:p-6 [&::-webkit-details-marker]:hidden">
-              <div className="flex items-center justify-between">
-                <span className="grid size-11 place-items-center rounded-xl border border-line bg-mist text-teal group-open:border-accent/40 group-open:bg-teal group-open:text-white">
+    <ol className="mt-6 grid gap-4 md:grid-cols-3">
+      {steps.map(({ icon: Icon, title, sentence }, index) => {
+        const open = activeStep === index;
+        const titleId = `approach-title-${index}`;
+        const revealId = `approach-reveal-${index}`;
+
+        return (
+          <li key={title} className="card overflow-hidden">
+            <button
+              type="button"
+              aria-expanded={open}
+              aria-labelledby={titleId}
+              aria-controls={revealId}
+              onClick={() => setActiveStep((step) => step === index ? null : index)}
+              className="approach-card group flex h-full w-full flex-col rounded-2xl border border-transparent p-5 text-left outline-offset-[-4px] aria-expanded:border-accent/60 aria-expanded:bg-mist hover:border-accent/40 sm:p-6"
+            >
+              <span className="flex w-full items-center justify-between">
+                <span className="grid size-11 place-items-center rounded-xl border border-line bg-mist text-teal group-aria-expanded:bg-teal group-aria-expanded:text-white">
                   <Icon size={22} aria-hidden="true" />
                 </span>
-                <span className="eyebrow text-teal" aria-hidden="true">Step 0{index + 1}</span>
-              </div>
-              <h3 className="mt-4 text-[23px]">{title}</h3>
-              <p className="mt-2 text-sm text-muted">{summary}</p>
-              <span className="mt-4 flex items-center gap-2 text-sm font-semibold text-teal" aria-hidden="true">
-                <ChevronDown size={16} className="motion-safe:transition-transform group-open:rotate-180" />
-                <span className="group-open:hidden">Read more</span>
-                <span className="hidden group-open:inline">Read less</span>
+                <span className="eyebrow flex items-center gap-2 text-teal">
+                  <Minus size={14} className="invisible group-aria-expanded:visible" aria-hidden="true" />
+                  Step 0{index + 1}
+                </span>
               </span>
-            </summary>
-            <div className="px-5 pb-5 sm:px-6 sm:pb-6">
-              <p className="border-t border-line pt-4 text-sm text-muted">{detail}</p>
-            </div>
-          </details>
-        </li>
-      ))}
+              <span id={titleId} className="mt-4 font-display text-[23px] leading-tight font-bold">{title}</span>
+              <span className="mt-4 grid w-full flex-1 items-center border-t border-line pt-3">
+                <span id={revealId} aria-hidden={!open} className="approach-reveal col-start-1 row-start-1 text-sm leading-relaxed text-ink">
+                  {sentence}
+                </span>
+                <span aria-hidden="true" className="approach-prompt col-start-1 row-start-1 flex items-center gap-2 text-sm font-semibold text-teal">
+                  <Plus size={16} /> Click to reveal
+                </span>
+              </span>
+            </button>
+          </li>
+        );
+      })}
     </ol>
   );
 }

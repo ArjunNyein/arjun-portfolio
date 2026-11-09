@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Dumbbell, Wrench, Sparkles, Terminal, Utensils } from "lucide-react";
 import { ApproachCards } from "@/components/approach-cards";
+import { SignalTrace } from "@/components/signal-trace";
 import { ResumeLink } from "@/components/site";
 import { profile, toolbox } from "@/content/portfolio";
 
@@ -29,12 +30,7 @@ export default function About() {
                 <div className="grid size-14 rotate-6 place-items-center rounded-xl border border-mint/30 bg-panel text-mint/75 motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:-translate-y-1 motion-safe:group-hover:rotate-0 motion-safe:group-focus-within:rotate-0">
                   <Terminal size={25} />
                 </div>
-                <svg viewBox="0 0 66 54" className="absolute top-7 right-9 h-14 w-16 text-mint/50" fill="none">
-                  <path d="M5 45h20l12-18h14l10-18" stroke="currentColor" strokeWidth="1.2" />
-                  <circle cx="5" cy="45" r="3" fill="currentColor" />
-                  <circle cx="37" cy="27" r="3" fill="currentColor" />
-                  <circle cx="61" cy="9" r="3" fill="currentColor" />
-                </svg>
+                <SignalTrace className="absolute top-7 right-9 w-28 text-mint/50" />
               </div>
               <p className="eyebrow text-mint">Glad you’re here</p>
               <h2 id="welcome" className="mt-2 text-[26px] sm:text-[30px] lg:pr-20">Welcome to my corner of the internet.</h2>
@@ -52,16 +48,20 @@ export default function About() {
               </div>
             </section>
           </div>
-          <div className="space-y-5">
-            <div className="relative aspect-[4/4.45] w-full max-w-[366px] overflow-hidden rounded-[1.75rem] bg-panel">
-              <Image
-                src="/arjun-nyein.webp"
-                alt="Arjun Nyein"
-                fill
-                preload
-                sizes="(min-width: 406px) 366px, calc(100vw - 40px)"
-                className="object-cover object-[center_32%]"
-              />
+          <div className="group space-y-5">
+            <div className="relative max-w-[366px]">
+              <SignalTrace className="absolute -top-6 -right-7 hidden w-36 text-accent/60 lg:block" />
+              <div className="relative aspect-[4/4.45] w-full max-w-[366px] overflow-hidden rounded-[1.75rem] bg-panel">
+                <Image
+                  src="/arjun-nyein.webp"
+                  alt="Arjun Nyein"
+                  fill
+                  preload
+                  sizes="(min-width: 406px) 366px, calc(100vw - 40px)"
+                  className="object-cover object-[center_32%]"
+                />
+              </div>
+              <div aria-hidden="true" className="absolute bottom-3 left-3 rounded-md border border-mint/30 bg-navy/95 px-2.5 py-1.5 font-mono text-[11px] text-mint">Arjun Nyein</div>
             </div>
             <aside className="rounded-2xl border border-white bg-white/70 p-6 sm:p-8">
               <h2 className="eyebrow font-normal text-teal">Education</h2>
