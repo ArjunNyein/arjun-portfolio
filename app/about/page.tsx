@@ -19,7 +19,15 @@ export default function About() {
         <div className="shell grid items-start gap-8 py-12 md:grid-cols-[1.5fr_1fr] lg:gap-16 lg:py-18">
           <div>
             <p className="eyebrow text-teal">About Me</p>
-            <h1 className="mt-2 text-[clamp(2.75rem,7vw,5rem)] tracking-tight">Hi, I’m Arjun.</h1>
+            <h1 className="mt-2 text-[clamp(2.75rem,7vw,5rem)] tracking-tight">
+              Hi, I’m <span className="inline-block whitespace-nowrap">
+                Arjun.
+                <svg aria-hidden="true" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="ml-2 inline-block size-[0.65em] -rotate-12 align-middle text-teal/85 motion-safe:transition-transform motion-safe:hover:rotate-0">
+                  <path d="M28 5C17 2 7 8 5 19c-3 12 4 22 15 24 12 2 23-5 24-17C46 16 39 7 30 6" />
+                  <path d="m17 16-.4 3m13-3.4-.2 3.2M14 25c3.7 7.7 14 10.3 21 .9" />
+                </svg>
+              </span>
+            </h1>
             <div className="mt-5 max-w-[650px] space-y-3.5 sm:text-lg">
               <p>I’m studying Computer Science at UW–Parkside.</p>
               <p>I enjoy building tools that make everyday work simpler. So far, that has taken me from campus IT to software development and data projects during my internship at Twin Disc.</p>
