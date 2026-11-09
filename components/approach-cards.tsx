@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { CheckCheck, Code2, Compass, Minus, Plus } from "lucide-react";
+import { Check, CheckCheck, Code2, Compass, Plus } from "lucide-react";
+import { useApproachReveal } from "@/components/approach-reveal-provider";
 
 const steps = [
   {
@@ -22,12 +22,12 @@ const steps = [
 ];
 
 export function ApproachCards() {
-  const [activeStep, setActiveStep] = useState<number | null>(null);
+  const { revealedSteps, revealStep } = useApproachReveal();
 
   return (
     <ol className="mt-6 grid gap-4 md:grid-cols-3">
       {steps.map(({ icon: Icon, title, sentence }, index) => {
-        const open = activeStep === index;
+        const open = revealedSteps.has(index);
         const titleId = `approach-title-${index}`;
         const revealId = `approach-reveal-${index}`;
 
@@ -36,17 +36,18 @@ export function ApproachCards() {
             <button
               type="button"
               aria-expanded={open}
+              aria-disabled={open}
               aria-labelledby={titleId}
               aria-controls={revealId}
-              onClick={() => setActiveStep((step) => step === index ? null : index)}
-              className="approach-card group flex h-full w-full flex-col rounded-2xl border border-transparent p-5 text-left outline-offset-[-4px] aria-expanded:border-accent/60 aria-expanded:bg-mist hover:border-accent/40 sm:p-6"
+              onClick={() => revealStep(index)}
+              className="approach-card group flex h-full w-full flex-col rounded-2xl border border-transparent p-5 text-left outline-offset-[-4px] aria-expanded:border-accent/60 aria-expanded:bg-mist hover:border-accent/40 aria-disabled:cursor-default sm:p-6"
             >
               <span className="flex w-full items-center justify-between">
                 <span className="grid size-11 place-items-center rounded-xl border border-line bg-mist text-teal group-aria-expanded:bg-teal group-aria-expanded:text-white">
                   <Icon size={22} aria-hidden="true" />
                 </span>
                 <span className="eyebrow flex items-center gap-2 text-teal">
-                  <Minus size={14} className="invisible group-aria-expanded:visible" aria-hidden="true" />
+                  <Check size={14} className="invisible group-aria-expanded:visible" aria-hidden="true" />
                   Step 0{index + 1}
                 </span>
               </span>

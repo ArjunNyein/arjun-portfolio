@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@fontsource-variable/inter/wght.css";
 import "@fontsource-variable/space-grotesk/wght.css";
 import "@fontsource/ibm-plex-mono/latin-400.css";
+import { ApproachRevealProvider } from "@/components/approach-reveal-provider";
 import { PointerRing } from "@/components/pointer-ring";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site";
@@ -20,7 +21,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           Skip to content
         </a>
         <SiteHeader />
-        <main id="main-content" tabIndex={-1} className="flex-1">{children}</main>
+        <ApproachRevealProvider>
+          <main id="main-content" tabIndex={-1} className="flex-1">{children}</main>
+        </ApproachRevealProvider>
         <SiteFooter />
         <PointerRing />
       </body>

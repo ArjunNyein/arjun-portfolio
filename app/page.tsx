@@ -15,7 +15,7 @@ export default function Home() {
               I like turning everyday problems into <span className="text-mint">useful software.</span>
             </h1>
             <p className="mt-5 max-w-[580px] text-cloud sm:text-lg">
-              I’m Arjun Nyein, a Computer Science student who builds tools for the shop floor, the classroom, and the work in between.
+              I’m Arjun Nyein, a Computer Science student at UW–Parkside graduating in May 2027. My internship and university roles have given me experience in software development, campus IT, and data projects.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/projects" className="action border-mint bg-mint text-navy hover:border-white hover:bg-white">Explore My Projects <ArrowRight size={16} aria-hidden="true" /></Link>
