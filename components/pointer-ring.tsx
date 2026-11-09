@@ -32,7 +32,13 @@ export function PointerRing() {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         element.style.translate = `${event.clientX}px ${event.clientY}px`;
-        element.toggleAttribute("data-active", Boolean(target.closest("a, button, summary")));
+        if (target.closest("a, button, summary")) {
+          element.dataset.mode = "control";
+        } else if (target.closest("[data-pointer-card], .project-story, .card-hover")) {
+          element.dataset.mode = "card";
+        } else {
+          delete element.dataset.mode;
+        }
         element.setAttribute("data-visible", "");
       });
     };

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCheck, Code2, Compass, Dumbbell, Wrench, Sparkles, Terminal, Utensils } from "lucide-react";
+import { ArrowRight, Dumbbell, Wrench, Sparkles, Terminal, Utensils } from "lucide-react";
+import { ApproachCards } from "@/components/approach-cards";
 import { ResumeLink } from "@/components/site";
 import { profile, toolbox } from "@/content/portfolio";
 
@@ -9,12 +10,6 @@ export const metadata: Metadata = {
   title: "About Me",
   description: "Meet Arjun Nyein, a Computer Science student at UW–Parkside. Learn how he works and what he enjoys outside technology.",
 };
-
-const approach = [
-  { icon: Compass, title: "Understand the problem", text: "I like learning how people currently do things before deciding what needs to change." },
-  { icon: Code2, title: "Build something useful", text: "I focus on making applications understandable and practical for the people who will use them." },
-  { icon: CheckCheck, title: "Check the details", text: "I test my work, validate information, and make sure the finished result does what it should." },
-];
 
 export default function About() {
   return (
@@ -34,7 +29,12 @@ export default function About() {
                 <div className="grid size-14 rotate-6 place-items-center rounded-xl border border-mint/30 bg-panel text-mint/75 motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:-translate-y-1 motion-safe:group-hover:rotate-0 motion-safe:group-focus-within:rotate-0">
                   <Terminal size={25} />
                 </div>
-                <Sparkles size={16} className="absolute -top-1 -left-4 text-mint/60" />
+                <svg viewBox="0 0 66 54" className="absolute top-7 right-9 h-14 w-16 text-mint/50" fill="none">
+                  <path d="M5 45h20l12-18h14l10-18" stroke="currentColor" strokeWidth="1.2" />
+                  <circle cx="5" cy="45" r="3" fill="currentColor" />
+                  <circle cx="37" cy="27" r="3" fill="currentColor" />
+                  <circle cx="61" cy="9" r="3" fill="currentColor" />
+                </svg>
               </div>
               <p className="eyebrow text-mint">Glad you’re here</p>
               <h2 id="welcome" className="mt-2 text-[26px] sm:text-[30px] lg:pr-20">Welcome to my corner of the internet.</h2>
@@ -75,15 +75,7 @@ export default function About() {
       </section>
       <section className="shell py-11 sm:py-16" aria-labelledby="approach">
         <h2 id="approach" className="text-[32px] sm:text-[42px]">A little about how I work</h2>
-        <ol className="mt-6 grid gap-6 md:grid-cols-3">
-          {approach.map(({ icon: Icon, title, text }, index) => (
-            <li key={title} className="border-t border-line pt-5">
-              <div className="flex items-center justify-between"><Icon className="text-teal" size={26} aria-hidden="true" /> <span className="eyebrow text-teal" aria-hidden="true">0{index + 1}</span></div>
-              <h3 className="mt-4 text-[23px]">{title}</h3>
-              <p className="mt-2 text-muted">{text}</p>
-            </li>
-          ))}
-        </ol>
+        <ApproachCards />
       </section>
       <section className="bg-sand" aria-labelledby="outside">
         <div className="shell grid items-center gap-5 py-8 sm:grid-cols-[1fr_auto]">
