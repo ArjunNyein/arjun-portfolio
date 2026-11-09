@@ -1,43 +1,53 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowDownRight, ArrowRight, GraduationCap, Laptop } from "lucide-react";
 import { ProjectCard } from "@/components/project-card";
-import { ResumeLink } from "@/components/site";
 import { profile, projects } from "@/content/portfolio";
 
 export default function Home() {
   return (
     <>
       <section className="hero-surface border-t border-steel/40 bg-navy text-white">
-        <div className="shell grid items-center gap-10 py-12 lg:grid-cols-[minmax(0,1.65fr)_minmax(0,1fr)] lg:gap-16 lg:py-20">
+        <div className="shell grid items-center gap-10 py-12 md:grid-cols-[1.3fr_1fr] lg:gap-20 lg:py-20">
           <div>
-            <p className="eyebrow mb-4 flex items-center gap-3 text-mint"><span className="h-px w-7 bg-mint" /> Arjun Nyein / Software Developer</p>
-            <h1 className="max-w-[690px] text-[clamp(2.5rem,5.4vw,4.5rem)] tracking-[-0.045em]">I build software that makes everyday work easier.</h1>
-            <p className="mt-5 max-w-[610px] text-cloud sm:text-lg">
-              I’m a Computer Science student at the University of Wisconsin–Parkside. My work has taken me from manufacturing software to campus IT and university projects. I like figuring out how a process works and where software can make it simpler.
+            <p className="eyebrow mb-5 flex items-center gap-3 text-mint"><span className="h-px w-7 bg-mint" /> Arjun Nyein</p>
+            <h1 className="max-w-[720px] text-[clamp(2.5rem,5.6vw,5.15rem)] tracking-[-0.05em]">
+              I like turning everyday problems into <span className="text-mint">useful software.</span>
+            </h1>
+            <p className="mt-5 max-w-[580px] text-cloud sm:text-lg">
+              I’m Arjun, a Computer Science student at the University of Wisconsin–Parkside. I’ve worked on software for manufacturing, campus IT, security, and reporting.
             </p>
-            <p className="mt-4 text-sm font-semibold text-cloud">B.S. Computer Science · Expected {profile.graduation} · GPA {profile.gpa}</p>
-            <div className="mt-6 flex flex-wrap gap-2.5">
-              <Link href="/experience" className="action border-mint bg-mint text-navy hover:border-white hover:bg-white">View Experience <ArrowRight size={16} aria-hidden="true" /></Link>
-              <Link href="/projects" className="action border-mint/60 bg-panel text-mint hover:bg-mint hover:text-navy">Explore Projects <ArrowRight size={16} aria-hidden="true" /></Link>
-              <ResumeLink variant="dark" />
+            <p className="mt-2 max-w-[580px] text-cloud sm:text-lg">I enjoy understanding a problem, building something practical, and seeing people actually use it.</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/projects" className="action border-mint bg-mint text-navy hover:border-white hover:bg-white">Explore My Projects <ArrowRight size={16} aria-hidden="true" /></Link>
+              <Link href="/about" className="action border-steel bg-panel text-white hover:border-mint hover:text-mint">Get to Know Me <ArrowDownRight size={16} aria-hidden="true" /></Link>
             </div>
           </div>
-          <aside className="relative overflow-hidden rounded-2xl border border-steel bg-panel/90 p-6 shadow-2xl shadow-black/20 sm:p-8" aria-label="Manufacturing dashboard outcome">
-            <p className="eyebrow flex justify-between gap-3 border-b border-steel pb-4 text-mint"><span>From the shop floor</span><span>01 / Twin Disc</span></p>
-            <p className="mt-5 font-display text-[clamp(4rem,8vw,6rem)] font-bold leading-none tracking-tighter text-mint">150+</p>
-            <p className="mt-3 max-w-sm text-lg">shop-floor employees use the dashboard I built during my internship at Twin Disc.</p>
-            <Link href="/projects/manufacturing-dashboard" className="inline-link mt-2 text-mint">See what changed <ArrowUpRight size={15} aria-hidden="true" /></Link>
-          </aside>
+          <figure className="relative mx-auto w-full max-w-[390px] px-3 pb-3">
+            <div className="absolute inset-0 translate-x-1 translate-y-2 rounded-[2rem] border border-mint/35" aria-hidden="true" />
+            <div className="relative aspect-[4/4.45] overflow-hidden rounded-[1.75rem] bg-panel">
+              <Image src="/arjun-nyein.webp" alt="Arjun Nyein" fill preload sizes="(min-width: 768px) 366px, 90vw" className="object-cover object-[center_32%]" />
+            </div>
+            <figcaption className="absolute -bottom-2 right-0 flex items-center gap-2 rounded-md border border-steel bg-navy px-3 py-2 font-mono text-xs text-cloud shadow-lg"><span className="size-2 rounded-full bg-amber" /> Kenosha, Wisconsin</figcaption>
+          </figure>
+        </div>
+        <div className="border-t border-steel/75 bg-navy/65">
+          <ul className="shell grid gap-3 py-5 text-sm text-cloud sm:grid-cols-2">
+            <li className="flex items-center gap-3"><GraduationCap size={19} className="shrink-0 text-mint" aria-hidden="true" /> B.S. Computer Science · Expected {profile.graduation}</li>
+            <li className="flex items-center gap-3"><Laptop size={18} className="shrink-0 text-mint" aria-hidden="true" /> Manufacturing software and campus IT</li>
+          </ul>
         </div>
       </section>
-      <section className="shell section-pad" aria-labelledby="featured-title">
+      <section className="shell py-11 sm:py-16" aria-labelledby="featured-title">
         <p className="eyebrow text-teal">Selected work</p>
-        <h2 id="featured-title" className="mt-2 text-[32px] sm:text-[42px]">Two projects to start with</h2>
-        <div className="mt-5 grid gap-4 sm:grid-cols-2 sm:gap-5">
-          <ProjectCard project={projects[0]} />
-          <ProjectCard project={projects[2]} />
+        <div className="mb-7 flex flex-wrap items-end justify-between gap-x-6">
+          <h2 id="featured-title" className="mt-2 text-[32px] sm:text-[44px]">Two projects to start with</h2>
+          <Link href="/projects" className="inline-link">Browse all five projects <ArrowRight size={15} aria-hidden="true" /></Link>
         </div>
-        <Link href="/projects" className="inline-link mt-3">Browse all five projects <ArrowRight size={15} aria-hidden="true" /></Link>
+        <div className="grid gap-x-8 gap-y-8 sm:grid-cols-[1.15fr_1fr]">
+          <ProjectCard project={projects[0]} summary="An internal production dashboard that refreshes every three minutes for 150+ shop-floor employees." />
+          <ProjectCard project={projects[2]} summary="A degree-planning app my team built for students and academic advisors." />
+        </div>
       </section>
     </>
   );

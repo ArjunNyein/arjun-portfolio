@@ -13,6 +13,8 @@
   --color-cloud: #d6e5f1;
   --color-mist: #eaf2f5;
   --color-surface: #f5f8fa;
+  --color-amber: #d9a25e;
+  --color-sand: #f5ead9;
   --color-line: #d7e3e9;
   --font-sans: "Inter Variable", system-ui, sans-serif;
   --font-display: "Space Grotesk Variable", system-ui, sans-serif;
@@ -98,4 +100,37 @@ dialog::backdrop { background: rgb(16 29 46 / 66%); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; }
+}
+
+.artboard {
+  display: grid;
+  min-height: 205px;
+  place-items: center;
+  overflow: hidden;
+  padding: 1rem;
+  border-radius: 1.125rem;
+  background-image: radial-gradient(rgb(112 139 152 / 30%) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+.artboard.hero-surface {
+  background-image:
+    radial-gradient(ellipse at 80% 18%, rgb(24 123 131 / 30%), transparent 65%),
+    radial-gradient(rgb(112 139 152 / 35%) 1px, transparent 1px);
+  background-size: auto, 14px 14px;
+}
+.art-frame {
+  border-width: 1px;
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 28px rgb(16 29 46 / 13%);
+}
+@media (min-width: 768px) {
+  .artboard { min-height: 235px; }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .art-frame, .art-refresh { transition: transform 260ms ease-out; }
+  .artboard:hover .art-frame { transform: translateY(-3px); }
+  .artboard:hover .art-refresh { transform: rotate(180deg); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .art-view { animation: enter 180ms ease-out; }
 }

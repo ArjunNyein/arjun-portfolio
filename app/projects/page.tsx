@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <>
-      <PageIntro label="Technical projects" title="Explore my work" description="Five projects across manufacturing, security, education, and reporting. Open a project to see what I contributed." />
-      <section className="shell section-pad grid gap-4 md:grid-cols-2 md:gap-5" aria-label="Project summaries">
+      <PageIntro label="Technical projects" title="Things I’ve helped build." description="Five projects, from a production display on the shop floor to a prototype built with classmates." />
+      <section className="shell section-pad grid gap-x-9 gap-y-10 md:grid-cols-2 lg:gap-y-14" aria-label="Project summaries">
         {projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} featured={index === 0} />)}
       </section>
     </>

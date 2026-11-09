@@ -10,13 +10,10 @@ export const profile = {
   resume: "/Arjun_Nyein_Resume_Software.pdf",
 };
 
-export const skills = [
-  { title: "Programming Languages", items: ["Java", "Python", "SQL", "TypeScript", "JavaScript", "Bash", "C++"] },
-  { title: "Web Development", items: ["React", "Next.js", "Spring Boot", "FastAPI", "REST APIs", "WebSockets", "HTML", "CSS"] },
-  { title: "Databases & Data", items: ["MySQL", "PostgreSQL", "MongoDB", "Supabase", "Microsoft Fabric", "Power BI", "PySpark", "Apache POI", "Excel"] },
-  { title: "Testing & Developer Tools", items: ["Vitest", "React Testing Library", "JUnit", "Git", "GitHub", "Maven", "Gradle", "IIS", "DataGrip"] },
-  { title: "IT & Systems", items: ["Active Directory", "Ivanti", "Windows", "macOS", "Linux"] },
-  { title: "AI-Assisted Development", items: ["ChatGPT", "Codex", "Claude", "Microsoft Copilot"], note: "I use AI tools to brainstorm, debug, and review code. I verify suggestions, test the results, and make sure I understand the code I’m working with." },
+export const toolbox = [
+  "Java", "Python", "TypeScript", "JavaScript", "React", "Next.js", "Spring Boot", "FastAPI",
+  "SQL", "PostgreSQL", "MongoDB", "Supabase", "Power BI", "Microsoft Fabric", "Excel",
+  "Git", "GitHub", "Vitest",
 ];
 
 export type Project = {
@@ -36,7 +33,7 @@ export const projects: readonly Project[] = [
     id: "manufacturing-dashboard",
     title: "Twin Disc Manufacturing Dashboard",
     category: "Twin Disc / Internal web app",
-    summary: "Production views that refresh every three minutes for 150+ shop-floor employees.",
+    summary: "Production information, without the manual refresh.",
     contribution: "I built and deployed the dashboard on IIS using HTML, CSS, and JavaScript. It reads structured CSV files and refreshes production views every three minutes.",
     outcome: "Replaced manually updated Excel production displays for 150+ shop-floor employees.",
     stack: ["HTML", "CSS", "JavaScript", "IIS", "CSV"],
@@ -46,8 +43,8 @@ export const projects: readonly Project[] = [
     id: "ip-threat-assessment",
     title: "IP Threat Assessment",
     category: "Cybersecurity / Internal web app",
-    summary: "An internal tool that helps the IT team review IP threat information.",
-    contribution: "I developed React and TypeScript frontend features, integrated REST APIs, and contributed changes to the FastAPI backend. I worked with a cybersecurity intern on the application.",
+    summary: "One IP address, two levels of detail.",
+    contribution: "I worked alongside a cybersecurity intern on an internal tool for the IT team. I built the React and TypeScript frontend and connected it to the FastAPI backend my teammate developed.",
     outcome: "The tool brings together VirusTotal, Shodan, and GreyNoise findings in a general summary and a more detailed technical view.",
     stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "FastAPI", "REST APIs"],
   },
@@ -55,17 +52,17 @@ export const projects: readonly Project[] = [
     id: "gradtracker",
     title: "GradTracker",
     category: "Full-stack web app / Four-person team",
-    summary: "A degree planning app for students and academic advisors, built by a four-person university team.",
-    contribution: "I built administration pages with search and sorting, implemented student and advisor sign-in flows and protected frontend routes, and tested role selection, signup restrictions, redirects, sorting, and interface rendering with Vitest and React Testing Library.",
+    summary: "Degree planning that’s easier to follow.",
+    contribution: "Our four-person team built GradTracker for students and academic advisors. I worked on administration pages, search and sorting, sign-in flows, and protected routes. I also wrote automated tests with Vitest and React Testing Library.",
     outcome: "University team project for students and academic advisors. The frontend source is public.",
-    stack: ["Next.js", "TypeScript", "Supabase", "Chakra UI", "Vitest", "React Testing Library"],
+    stack: ["Next.js", "TypeScript", "Supabase", "Vitest", "React Testing Library"],
     source: "https://github.com/Grad-Tracker/grad-tracker-frontend",
   },
   {
     id: "haribo-reporting",
     title: "HARIBO Supply Chain Reporting",
     category: "Business process automation / Industry project",
-    summary: "Weekly reporting automation that cut preparation time by an estimated 75%.",
+    summary: "Less time preparing reports. More time for the actual work.",
     contribution: "I developed a Java application with Apache POI to turn three Excel files into one structured weekly report. I gathered requirements with the reporting manager and validated the output against business needs.",
     outcome: "Replaced manual report preparation and reduced preparation time by an estimated 75%.",
     stack: ["Java", "Apache POI", "Excel"],
@@ -74,10 +71,10 @@ export const projects: readonly Project[] = [
     id: "lab-checkpoint-sign-off",
     title: "Lab Checkpoint Sign-Off Application",
     category: "Full-stack app / Team prototype",
-    summary: "A four-person team prototype for tracking checkpoints and help requests.",
-    contribution: "I implemented WebSocket communication between React and Spring Boot so student and instructor views stayed in sync without a manual refresh.",
+    summary: "Lab check-ins, updated in real time.",
+    contribution: "On a four-person team, I implemented WebSocket communication between React and Spring Boot so instructors and students could see checkpoint updates and help requests without refreshing.",
     outcome: "The four-person university prototype included instructor-generated join codes, student sign-ins, live checkpoint updates, and CSV exports for Canvas.",
-    stack: ["React", "Java", "Spring Boot", "MongoDB", "WebSockets"],
+    stack: ["React", "Spring Boot", "MongoDB", "WebSockets"],
   },
 ];
 
@@ -94,13 +91,13 @@ export const experience: readonly { employer: string; location: string; roles: r
     employer: "Twin Disc, Inc.",
     location: "Racine, Wisconsin",
     roles: [{
-      title: "Information Technology Intern (Software Development)",
+      title: "Information Technology Intern — Software Development",
       dates: "May 2026 – August 2026",
       contributions: [],
       highlights: [
-        { title: "Manufacturing Dashboard", description: "I built and deployed an HTML, CSS, and JavaScript dashboard on IIS. CSV-based production views replaced manually updated Excel displays, refresh every three minutes, and serve 150+ shop-floor employees.", href: "/projects/manufacturing-dashboard" },
-        { title: "IP Threat Assessment", description: "I built React and TypeScript frontend features, integrated REST APIs, and contributed changes to the FastAPI backend. The IT team could review VirusTotal, Shodan, and GreyNoise findings through general and technical views.", href: "/projects#ip-threat-assessment" },
-        { title: "Ethics & Compliance", description: "I built a Next.js and TypeScript frontend for submission forms, progress dashboards, and screens for reviewing AI-suggested information." },
+        { title: "Manufacturing Dashboard", description: "I built an internal production display to replace manually updated Excel screens.", href: "/projects/manufacturing-dashboard" },
+        { title: "IP Threat Assessment", description: "I built a frontend that helps IT staff review IP reputation through general and technical views.", href: "/projects#ip-threat-assessment" },
+        { title: "Ethics & Compliance", description: "I built an interface for submissions, approvals, progress dashboards, and activity tracking." },
         { title: "Power BI Migration & Data Validation", description: "I gathered feedback from business stakeholders, including executive leadership, during the move from QlikView to Power BI. I compared reports, exported data to Excel, and used an approved AI assistant to investigate discrepancies. I documented findings for IT and worked with Microsoft Fabric and Power BI data workflows." },
       ],
     }],
@@ -110,7 +107,7 @@ export const experience: readonly { employer: string; location: string; roles: r
     location: "Kenosha, Wisconsin",
     roles: [
       {
-        title: "IT Analyst, Campus Technology Services",
+        title: "IT Analyst — Campus Technology Services",
         dates: "December 2024 – Present",
         contributions: [
           "At the CTS Tech Bar, I troubleshoot hardware, software, network, authentication, and account-access issues for students, faculty, and staff.",
@@ -147,12 +144,11 @@ export const experience: readonly { employer: string; location: string; roles: r
     employer: "HARIBO / UW–Parkside Industry Project",
     location: "Kenosha, Wisconsin",
     roles: [{
-      title: "Software Developer – Supply Chain Automation",
+      title: "Software Developer — Supply Chain Automation",
       dates: "June 2024 – December 2024",
       contributions: [
         "Built a Java application with Apache POI that combined three Excel files into structured weekly supply-chain reports.",
         "Worked directly with the reporting manager to map the manual workflow and gather requirements. I validated the generated reports against business needs.",
-        "The application reduced report preparation time by an estimated 75%.",
       ],
       links: [{ href: "/projects#haribo-reporting", label: "Supply-chain reporting" }],
     }],
