@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CheckCheck, Code2, Compass, Dumbbell, Mountain, Sparkles, Utensils } from "lucide-react";
 import { ResumeLink } from "@/components/site";
 import { profile, toolbox } from "@/content/portfolio";
@@ -28,13 +29,25 @@ export default function About() {
               <p>I like getting close to a problem, understanding how people actually work, and building something that makes their day a little easier.</p>
             </div>
           </div>
-          <aside className="rounded-2xl border border-white bg-white/70 p-6 sm:p-8">
-            <h2 className="eyebrow font-normal text-teal">Education</h2>
-            <p className="mt-3 font-display text-2xl font-bold">{profile.university}</p>
-            <p className="mt-2">{profile.degree}</p>
-            <p className="mt-2 text-sm text-muted">Expected {profile.graduation} · GPA {profile.gpa}</p>
-            <div className="mt-5"><ResumeLink /></div>
-          </aside>
+          <div className="space-y-5">
+            <div className="relative aspect-[4/4.45] w-full max-w-[366px] overflow-hidden rounded-[1.75rem] bg-panel">
+              <Image
+                src="/arjun-nyein.webp"
+                alt="Arjun Nyein"
+                fill
+                preload
+                sizes="(min-width: 406px) 366px, calc(100vw - 40px)"
+                className="object-cover object-[center_32%]"
+              />
+            </div>
+            <aside className="rounded-2xl border border-white bg-white/70 p-6 sm:p-8">
+              <h2 className="eyebrow font-normal text-teal">Education</h2>
+              <p className="mt-3 font-display text-2xl font-bold">{profile.university}</p>
+              <p className="mt-2">{profile.degree}</p>
+              <p className="mt-2 text-sm text-muted">Expected {profile.graduation} · GPA {profile.gpa}</p>
+              <div className="mt-5"><ResumeLink /></div>
+            </aside>
+          </div>
         </div>
       </section>
       <section className="shell py-11 sm:py-16" aria-labelledby="approach">
