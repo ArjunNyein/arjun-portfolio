@@ -6,10 +6,10 @@ import type { Project } from "@/content/portfolio";
 
 export function ProjectPreview({
   project,
-  indexItem = false,
+  label = "View project details",
 }: {
   project: Project;
-  indexItem?: boolean;
+  label?: string;
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
@@ -21,19 +21,17 @@ export function ProjectPreview({
         ref={trigger}
         type="button"
         aria-haspopup="dialog"
-        aria-label={indexItem ? `Preview ${project.title}` : `Open project preview: ${project.title}`}
+        aria-label={`${label}: ${project.title}`}
         onClick={() => dialog.current?.showModal()}
-        className={indexItem
-          ? "flex min-h-11 w-full items-center rounded-md px-3 text-left text-sm font-bold text-cloud transition-colors hover:bg-panel hover:text-white"
-          : "inline-link"}
+        className="inline-link"
       >
-        {indexItem ? project.shortTitle : <>Open project preview <ArrowUpRight size={15} aria-hidden="true" /></>}
+        {label} <ArrowUpRight size={15} aria-hidden="true" />
       </button>
       <dialog
         ref={dialog}
         aria-labelledby={title}
         onClose={() => trigger.current?.focus()}
-        className="fixed inset-0 m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-[420px] overflow-y-auto rounded-[12px] border border-line bg-white p-5 text-ink shadow-xl sm:p-6"
+        className="project-dialog fixed inset-0 m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-[580px] overflow-y-auto rounded-[12px] border border-line bg-white p-5 text-ink shadow-xl sm:p-6"
       >
         <form method="dialog">
           <button className="inline-link">
@@ -43,12 +41,15 @@ export function ProjectPreview({
         <p className="eyebrow mt-1 text-teal">{project.category}</p>
         <h2 id={title} className="mt-2 text-[29px]">{project.title}</h2>
         <p className="mt-3 font-bold">{project.summary}</p>
+        <h3 className="mt-5 text-lg">My contribution</h3>
         <p className="mt-2 text-muted">{project.contribution}</p>
+        <h3 className="mt-5 text-lg">Outcome or status</h3>
+        <p className="mt-2 text-muted">{project.outcome}</p>
         <p className="mt-4 rounded-md bg-mist px-3 py-2 font-mono text-xs leading-relaxed text-teal">
           {project.stack.join(" · ")}
         </p>
         {project.source && (
-          <a className="inline-link mt-2" href={project.source}>
+          <a className="inline-link mt-2" href={project.source} target="_blank" rel="noopener noreferrer">
             View source on GitHub <ArrowUpRight size={15} aria-hidden="true" />
           </a>
         )}

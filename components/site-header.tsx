@@ -8,7 +8,6 @@ import { ResumeLink } from "@/components/site";
 import { profile } from "@/content/portfolio";
 
 const routes = [
-  { href: "/", label: "Home" },
   { href: "/about", label: "About Me" },
   { href: "/experience", label: "Experience" },
   { href: "/projects", label: "Projects" },
@@ -22,7 +21,7 @@ export function SiteHeader() {
 
   const links = routes.map(({ href, label }) => {
     const current = pathname === href;
-    const active = current || (href !== "/" && pathname.startsWith(`${href}/`));
+    const active = current || pathname.startsWith(`${href}/`);
     const style = active
       ? dark ? "bg-panel text-mint" : "bg-mist text-teal"
       : dark ? "text-cloud hover:bg-panel" : "text-ink hover:bg-mist";
@@ -33,7 +32,7 @@ export function SiteHeader() {
         href={href}
         onClick={() => setOpen(false)}
         aria-current={current ? "page" : active ? "location" : undefined}
-        className={`inline-flex min-h-11 items-center rounded-md px-3 text-sm font-bold transition-colors ${style}`}
+        className={`nav-link relative inline-flex min-h-11 items-center rounded-md px-3 text-sm font-bold transition-colors ${style}`}
       >
         {label}
       </Link>
@@ -51,7 +50,7 @@ export function SiteHeader() {
       }}
     >
       <div className="shell flex min-h-[68px] items-center justify-between gap-3 py-3">
-        <Link href="/" onClick={() => setOpen(false)} className="font-display text-xl font-bold">{profile.name}</Link>
+        <Link href="/" onClick={() => { setOpen(false); if (pathname === "/") window.scrollTo(0, 0); }} className="font-display text-xl font-bold">{profile.name}</Link>
         <nav aria-label="Main navigation" className="hidden items-center gap-1 md:flex">
           {links}
           <div className="ml-2"><ResumeLink variant={dark ? "dark" : "outline"} /></div>

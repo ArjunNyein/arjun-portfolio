@@ -17,7 +17,7 @@ Open http://localhost:3000. For a production check, run `npm run build`, `npm ru
 
 - `content/portfolio.ts` holds contact details, skills, work history, project summaries, and the dashboard workflow.
 - `public/Arjun_Nyein_Resume_Software.pdf` is the public software résumé with the phone number removed. Keep that filename when replacing it.
-- `components/site.tsx` contains the headshot placeholder. Replace it with the approved photo once available.
+- `public/arjun-nyein.webp` is the supplied portrait, optimized for the About page.
 - The Manufacturing Dashboard workflow is conceptual. No company screenshots or internal data are included.
 
 ## Vercel

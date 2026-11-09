@@ -5,9 +5,11 @@
   --color-ink: #17324d;
   --color-panel: #1c3047;
   --color-steel: #345068;
+  --color-charcoal: #263846;
   --color-muted: #465d70;
+  --color-accent: #187b83;
   --color-teal: #126970;
-  --color-mint: #82dbc7;
+  --color-mint: #78d7c5;
   --color-cloud: #d6e5f1;
   --color-mist: #eaf2f5;
   --color-surface: #f5f8fa;
@@ -18,7 +20,7 @@
 }
 
 @layer base {
-  body { @apply bg-surface font-sans text-ink antialiased; }
+  body { @apply bg-surface font-sans text-charcoal antialiased; }
   h1, h2, h3, h4 { @apply font-display font-bold leading-[1.12]; }
   p { @apply leading-[1.55]; }
   button, summary { @apply cursor-pointer; }
@@ -26,15 +28,73 @@
 }
 
 @layer components {
-  .shell { @apply mx-auto w-full max-w-[1120px] px-5 sm:px-8 lg:px-12; }
+  .shell { @apply mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-12; }
   .section-pad { @apply py-7 sm:py-9; }
   .eyebrow { @apply font-mono text-xs leading-relaxed uppercase; }
-  .card { @apply min-w-0 rounded-[10px] border border-line bg-white; }
+  .card { @apply min-w-0 rounded-2xl border border-line bg-white shadow-sm shadow-ink/5; }
+  .tag { @apply rounded-md border border-line bg-mist px-2.5 py-1 text-xs leading-relaxed text-teal; }
   .action { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-[7px] border px-3.5 py-2 text-sm font-bold leading-tight transition-colors; }
   .inline-link { @apply inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-teal hover:underline underline-offset-4; }
 }
 
 dialog::backdrop { background: rgb(16 29 46 / 66%); }
+
+.hero-surface {
+  background-image:
+    radial-gradient(ellipse at 90% 20%, rgb(24 123 131 / 24%), transparent 60%),
+    linear-gradient(135deg, transparent 65%, rgb(120 215 197 / 8%));
+}
+
+.nav-link::after {
+  position: absolute;
+  inset: auto 0.75rem 0.28rem;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+.nav-link:is(:hover, [aria-current])::after { transform: scaleX(1); }
+
+.pointer-ring { display: none; }
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .pointer-ring {
+    position: fixed;
+    z-index: 40;
+    top: -9px;
+    left: -9px;
+    display: block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--color-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgb(120 215 197 / 35%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 140ms ease, scale 180ms ease;
+  }
+  .pointer-ring[data-visible] { opacity: 0.8; }
+  .pointer-ring[data-active] { scale: 1.55; }
+  body:has(dialog[open]) .pointer-ring { opacity: 0; }
+  .card-hover { transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease; }
+  .card-hover:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent);
+    box-shadow: 0 12px 28px rgb(23 50 77 / 9%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .page-enter { animation: enter 220ms ease-out; }
+  .project-dialog[open] { animation: enter 180ms ease-out; }
+  @keyframes enter {
+    from { opacity: 0.75; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; }
