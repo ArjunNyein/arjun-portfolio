@@ -21,7 +21,7 @@ export default function About() {
             <p className="eyebrow text-teal">About Me</p>
             <h1 className="mt-2 text-[clamp(2.75rem,7vw,5rem)] tracking-tight">Hi, I’m Arjun.</h1>
             <div className="mt-5 max-w-[650px] space-y-3.5 sm:text-lg">
-              <p>I’m studying Computer Science at UW–Parkside and graduating in May 2027.</p>
+              <p>I’m studying Computer Science at UW–Parkside.</p>
               <p>I enjoy building tools that make everyday work simpler. So far, that has taken me from campus IT to software development and data projects during my internship at Twin Disc.</p>
               <p>I’m drawn to full-stack development and projects where data helps solve a practical problem. I like learning a new tool by putting it to work on something useful.</p>
             </div>
@@ -61,7 +61,6 @@ export default function About() {
                   className="object-cover object-[center_32%]"
                 />
               </div>
-              <div aria-hidden="true" className="absolute bottom-3 left-3 rounded-md border border-mint/30 bg-navy/95 px-2.5 py-1.5 font-mono text-[11px] text-mint">Arjun Nyein</div>
             </div>
             <aside className="rounded-2xl border border-white bg-white/70 p-6 sm:p-8">
               <h2 className="eyebrow font-normal text-teal">Education</h2>

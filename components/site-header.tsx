@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useRef, useState } from "react";
 import { ResumeLink } from "@/components/site";
-import { profile } from "@/content/portfolio";
 
 const routes = [
   { href: "/about", label: "About Me" },
@@ -50,7 +49,7 @@ export function SiteHeader() {
       }}
     >
       <div className="shell flex min-h-[68px] items-center justify-between gap-3 py-3">
-        <Link href="/" onClick={() => { setOpen(false); if (pathname === "/") window.scrollTo(0, 0); }} className="font-display text-xl font-bold">{profile.name}</Link>
+        <Link href="/" aria-current={dark ? "page" : undefined} onClick={() => { setOpen(false); if (pathname === "/") window.scrollTo(0, 0); }} className="font-display text-xl font-bold">Home</Link>
         <nav aria-label="Main navigation" className="hidden items-center gap-1 md:flex">
           {links}
           <div className="ml-2"><ResumeLink variant={dark ? "dark" : "outline"} /></div>

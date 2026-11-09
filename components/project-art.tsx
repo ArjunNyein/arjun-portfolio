@@ -15,15 +15,15 @@ export function ProjectArt({ id }: { id: string }) {
             <RefreshCw size={15} className="art-refresh text-mint" />
           </div>
           <div className="mt-3 grid grid-cols-3 gap-2">
-            {["Employees", "Data feed", "Refresh"].map((label, index) => (
+            {["Display", "Data feed", "Updates"].map((label, index) => (
               <div key={label} className="rounded-md border border-steel bg-navy/70 p-2">
                 <div className={`mb-2 size-1.5 rounded-full ${index === 1 ? "bg-amber" : "bg-mint"}`} />
                 <span className="text-[10px]">{label}</span>
-                <span className="mt-2 block text-xs font-bold text-white">{["150+", "CSV", "3 min"][index]}</span>
+                <span className="mt-2 block text-xs font-bold text-white">{["Web", "CSV", "Auto"][index]}</span>
               </div>
             ))}
           </div>
-          <p className="mt-3 font-mono text-[10px] text-mint">CSV feed · Refresh every 3 min</p>
+          <p className="mt-3 font-mono text-[10px] text-mint">CSV feed · Automatic refresh</p>
         </div>
       </div>
     );

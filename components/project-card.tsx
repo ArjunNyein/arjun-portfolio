@@ -16,9 +16,6 @@ export function ProjectCard({ project, index, featured = false, summary }: { pro
         <Heading className={`mt-2 ${featured ? "text-[32px] sm:text-[42px]" : "text-[25px] sm:text-[30px]"}`}>{project.title}</Heading>
         <p className="mt-2 text-muted">{summary ?? project.summary}</p>
         {detailed && <p className="mt-3 text-sm text-ink"><strong>My role</strong> · {project.role}</p>}
-        {detailed && project.id === "haribo-reporting" && (
-          <p className="mt-3 text-sm text-ink"><strong className="mr-2 inline-block rounded-md bg-sand px-2.5 py-1 text-base">~75%</strong> estimated reduction in preparation time</p>
-        )}
         {detailed && (
           <ul className="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
             {project.stack.map((technology) => <li key={technology} className="tag">{technology}</li>)}

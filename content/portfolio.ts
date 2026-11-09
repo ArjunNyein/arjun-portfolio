@@ -69,7 +69,7 @@ export const projects: readonly Project[] = [
     summary: "Less time preparing reports. More time for the actual work.",
     role: "Wrote the Java reporting tool and validated its output with the reporting manager.",
     contribution: "I developed a Java application with Apache POI to turn three Excel files into one structured weekly report. I gathered requirements with the reporting manager and validated the output against business needs.",
-    outcome: "Replaced manual report preparation and reduced preparation time by an estimated 75%.",
+    outcome: "The tool produces a structured weekly report from the three source files.",
     stack: ["Java", "Apache POI", "Excel"],
   },
   {
@@ -101,8 +101,8 @@ export const experience: readonly { employer: string; location: string; roles: r
       dates: "May 2026 – August 2026",
       contributions: [],
       highlights: [
-        { title: "Manufacturing Dashboard", description: "I built and deployed a dashboard in HTML, CSS, and JavaScript on IIS. It replaces manually updated Excel screens with CSV-based views that refresh every three minutes for 150+ shop-floor employees.", href: "/projects/manufacturing-dashboard" },
-        { title: "IP Threat Assessment", description: "I built the React and TypeScript frontend and integrated the FastAPI REST endpoints. IT staff can review findings from VirusTotal, Shodan, and GreyNoise in General and Technical views.", href: "/projects#ip-threat-assessment" },
+        { title: "Manufacturing Dashboard", description: "I replaced manually updated Excel displays with a production dashboard used by 150+ shop-floor employees.", href: "/projects/manufacturing-dashboard" },
+        { title: "IP Threat Assessment", description: "I worked with a cybersecurity intern to make threat intelligence easier for IT staff to review, whether they needed a quick summary or technical details.", href: "/projects#ip-threat-assessment" },
         { title: "Ethics & Compliance", description: "I built a Next.js and TypeScript interface for submissions, approval workflows, progress dashboards, and activity tracking." },
         { title: "Power BI Migration & Data Validation", description: "During the QlikView to Power BI migration, I gathered feedback from business stakeholders, including executive leadership. I compared reports, exported data to Excel, and used a company-approved AI assistant to investigate discrepancies. I documented findings and worked with Microsoft Fabric and Power BI workflows." },
       ],

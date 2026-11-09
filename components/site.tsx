@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowUpRight, Download } from "lucide-react";
 import { profile } from "@/content/portfolio";
 
@@ -27,11 +26,7 @@ export function SiteFooter() {
   return (
     <footer id="contact" className="bg-navy text-cloud">
       <div className="shell flex flex-col gap-2 py-6 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
-        <div>
-          <Link href="/" className="font-display text-lg font-bold text-white">{profile.name}</Link>
-          <p className="mt-1 text-sm">Software Developer · {profile.university}</p>
-          <p className="mt-1 text-xs text-cloud">Expected graduation: {profile.graduation}</p>
-        </div>
+        <p className="font-display text-lg font-bold text-white">Find me online</p>
         <nav aria-label="Contact links" className="flex flex-wrap gap-x-5">
           {links.map(({ label, href }) => (
             <a key={label} href={href} target={href.startsWith("https:") ? "_blank" : undefined} rel={href.startsWith("https:") ? "noopener noreferrer" : undefined} className="inline-link text-mint">

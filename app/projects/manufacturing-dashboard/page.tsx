@@ -5,7 +5,7 @@ import { dashboardWorkflow } from "@/content/portfolio";
 
 export const metadata: Metadata = {
   title: "Manufacturing Dashboard Case Study",
-  description: "How Arjun Nyein built an IIS-hosted dashboard that refreshes production views for more than 150 Twin Disc shop-floor employees.",
+  description: "How an IIS-hosted dashboard turns structured CSV data into automatically refreshed production views.",
 };
 
 export default function ManufacturingDashboard() {
@@ -21,27 +21,17 @@ export default function ManufacturingDashboard() {
           <p className="mt-3 text-cloud sm:text-[19px]">An automatically refreshing production view for the shop floor.</p>
         </div>
       </header>
-      <div className="bg-mist">
-        <dl className="shell grid grid-cols-2 gap-3 py-5 sm:max-w-[1120px] sm:grid-cols-[230px_230px] sm:gap-7">
-          {[["150+", "Shop-floor employees"], ["3 min", "Refresh interval"]].map(([value, label]) => (
-            <div key={label} className="flex flex-col">
-              <dt className="order-2 mt-1 text-sm text-muted">{label}</dt>
-              <dd className="order-1 font-display text-[34px] font-bold leading-none sm:text-[44px]">{value}</dd>
-            </div>
-          ))}
-        </dl>
-      </div>
       <div className="bg-white">
         <div className="shell section-pad space-y-6">
           <section className="max-w-[870px] space-y-2">
             <p className="eyebrow text-teal">01 / Problem</p>
             <h2 className="text-[28px] sm:text-[34px]">The displays depended on manual updates</h2>
-            <p className="text-muted">The shop floor relied on manually updated Excel displays for production information. The goal was to make current production views available without someone updating the displays by hand.</p>
+            <p className="text-muted">Production information was already available in spreadsheets. The challenge was getting it onto shared displays without someone refreshing those displays by hand.</p>
           </section>
           <section className="max-w-[870px] space-y-2">
             <p className="eyebrow text-teal">02 / My role</p>
             <h2 className="text-[28px] sm:text-[34px]">I built and deployed the dashboard</h2>
-            <p className="text-muted">I built the web dashboard, deployed it on IIS, and set up automatic refreshes so shop-floor employees could see current production information without manual display updates.</p>
+            <p className="text-muted">I built the browser interface, connected it to the structured CSV feed, and deployed the application on IIS. JavaScript handles the refresh cycle.</p>
           </section>
           <section className="space-y-2">
             <p className="eyebrow text-teal">Implementation</p>
@@ -73,7 +63,7 @@ export default function ManufacturingDashboard() {
           <section className="max-w-[870px] space-y-2">
             <p className="eyebrow text-teal">04 / Results</p>
             <h2 className="text-[28px] sm:text-[34px]">Production views stay current</h2>
-            <p className="text-muted">The dashboard supports 150+ shop-floor employees. Production views refresh every three minutes, replacing the previous manual display updates.</p>
+            <p className="text-muted">Employees can check current production information on the shared displays while the dashboard handles updates in the background.</p>
           </section>
           <Link href="/projects" className="inline-link"><ArrowLeft size={15} aria-hidden="true" /> Back to projects</Link>
         </div>
