@@ -10,12 +10,12 @@ export default function Home() {
       <section className="hero-surface border-t border-steel/40 bg-navy text-white">
         <div className="shell grid items-center gap-10 py-12 md:grid-cols-[1.3fr_1fr] lg:gap-20 lg:py-20">
           <div>
-            <p className="eyebrow mb-5 flex items-center gap-3 text-mint"><span className="h-px w-7 bg-mint" /> Personal portfolio</p>
+            <p className="eyebrow mb-5 flex items-center gap-3 text-mint"><span className="h-px w-7 bg-mint" /> MY WORK</p>
             <h1 className="max-w-[720px] text-[clamp(2.5rem,5.6vw,5.15rem)] tracking-[-0.05em]">
-              I like turning everyday problems into <span className="text-mint">useful software.</span>
+              A few projects worth <span className="text-mint">a closer look.</span>
             </h1>
             <p className="mt-5 max-w-[580px] text-cloud sm:text-lg">
-              I’m Arjun Nyein, a Computer Science student at UW–Parkside graduating in May 2027. My internship and university roles have given me experience in software development, campus IT, and data projects.
+              From manufacturing dashboards to full-stack applications, explore some of the projects I’ve worked on and the problems I’ve helped solve.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/projects" className="action border-mint bg-mint text-navy hover:border-white hover:bg-white">Explore My Projects <ArrowRight size={16} aria-hidden="true" /></Link>
