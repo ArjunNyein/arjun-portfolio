@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #101d2e;
+  --color-ink: #17324d;
+  --color-panel: #1c3047;
+  --color-steel: #345068;
+  --color-muted: #465d70;
+  --color-teal: #126970;
+  --color-mint: #82dbc7;
+  --color-cloud: #d6e5f1;
+  --color-mist: #eaf2f5;
+  --color-surface: #f5f8fa;
+  --color-line: #d7e3e9;
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+  --font-display: "Space Grotesk Variable", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  body { @apply bg-surface font-sans text-ink antialiased; }
+  h1, h2, h3, h4 { @apply font-display font-bold leading-[1.12]; }
+  p { @apply leading-[1.55]; }
+  button, summary { @apply cursor-pointer; }
+  :focus-visible { @apply outline-2 outline-offset-4 outline-current; }
+}
+
+@layer components {
+  .shell { @apply mx-auto w-full max-w-[1120px] px-5 sm:px-8 lg:px-12; }
+  .section-pad { @apply py-7 sm:py-9; }
+  .eyebrow { @apply font-mono text-xs leading-relaxed uppercase; }
+  .card { @apply min-w-0 rounded-[10px] border border-line bg-white; }
+  .action { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-[7px] border px-3.5 py-2 text-sm font-bold leading-tight transition-colors; }
+  .inline-link { @apply inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-teal hover:underline underline-offset-4; }
+}
+
+dialog::backdrop { background: rgb(16 29 46 / 66%); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
