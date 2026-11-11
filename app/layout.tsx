@@ -10,10 +10,10 @@ import { SiteFooter } from "@/components/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  ...pageMetadata("Arjun Nyein | Software Developer", "Software projects across manufacturing, security, education, and business workflows.", "/"),
+  ...pageMetadata("Arjun Nyein | Computer Science Portfolio", "Arjun Nyein is a Computer Science senior at UW–Parkside with experience in application development, data validation, automation, and campus IT. Graduating May 2027.", "/"),
   metadataBase: new URL("https://arjun-portfolio-gray-five.vercel.app"),
-  title: { default: "Arjun Nyein | Software Developer", template: "%s | Arjun Nyein" },
-  description: "Arjun Nyein is a Computer Science student and software developer building practical applications for manufacturing, IT, and business workflows.",
+  title: { default: "Arjun Nyein | Computer Science Portfolio", template: "%s | Arjun Nyein" },
+  description: "Arjun Nyein is a Computer Science senior at UW–Parkside with experience in application development, data validation, automation, and campus IT. Graduating May 2027.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

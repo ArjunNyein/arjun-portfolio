@@ -97,14 +97,14 @@ export const experience: readonly { employer: string; location: string; roles: r
     employer: "Twin Disc, Inc.",
     location: "Racine, Wisconsin",
     roles: [{
-      title: "Information Technology Intern — Software Development",
+      title: "Information Technology Intern",
       dates: "May 2026 – August 2026",
       contributions: [],
       highlights: [
         { title: "Manufacturing Dashboard", description: "I replaced manually updated Excel displays with a production dashboard used by 150+ shop-floor employees.", href: "/projects/manufacturing-dashboard" },
         { title: "IP Threat Assessment", description: "I worked with a cybersecurity intern to make threat intelligence easier for IT staff to review, whether they needed a quick summary or technical details.", href: "/projects#ip-threat-assessment" },
         { title: "Ethics & Compliance", description: "I built a Next.js and TypeScript interface for submissions, approval workflows, progress dashboards, and activity tracking." },
-        { title: "Power BI Migration & Data Validation", description: "During the QlikView to Power BI migration, I gathered feedback from business stakeholders, including executive leadership. I compared reports, exported data to Excel, and used a company-approved AI assistant to investigate discrepancies. I documented findings and worked with Microsoft Fabric and Power BI workflows." },
+        { title: "Power BI Migration & Data Validation", description: "I validated QlikView reports against Power BI during a reporting migration. I used Excel and a company-approved AI assistant to investigate discrepancies, documented mismatches, and shared findings with the project team. I also worked with Microsoft Fabric workflows." },
       ],
     }],
   },

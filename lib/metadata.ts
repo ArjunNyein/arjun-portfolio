@@ -11,7 +11,7 @@ export function pageMetadata(title: string, description: string, path: string): 
       title,
       description,
       url: path,
-      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Arjun Nyein — Software Developer Portfolio" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Arjun Nyein — Computer Science Portfolio" }],
     },
     twitter: {
       card: "summary_large_image",

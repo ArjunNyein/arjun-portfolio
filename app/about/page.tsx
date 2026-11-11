@@ -31,8 +31,8 @@ export default function About() {
             </h1>
             <div className="mt-5 max-w-[650px] space-y-3.5 sm:text-lg">
               <p>I’m studying Computer Science at UW–Parkside.</p>
-              <p>I enjoy building tools that make everyday work simpler. So far, that has taken me from campus IT to software development and data projects during my internship at Twin Disc.</p>
-              <p>I’m drawn to full-stack development and projects where data helps solve a practical problem. I like learning a new tool by putting it to work on something useful.</p>
+              <p>At Twin Disc, I built web applications and helped validate reports during a Power BI migration. In campus IT, I troubleshoot technical issues for students, faculty, and staff.</p>
+              <p>I enjoy building applications, working with data, and understanding how technology can improve business operations. I like learning new tools by putting them to work on something useful.</p>
             </div>
             <section aria-labelledby="welcome" className="group hero-surface relative mt-7 isolate overflow-hidden rounded-2xl border border-steel bg-navy p-5 text-white sm:p-7">
               <div className="pointer-events-none absolute top-5 right-6 hidden select-none lg:block" aria-hidden="true">

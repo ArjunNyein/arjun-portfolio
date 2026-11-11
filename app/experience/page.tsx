@@ -35,7 +35,7 @@ export default function Experience() {
 
   return (
     <>
-      <PageIntro label="Work experience" title="Where I’ve learned by doing." description="A mix of software development, campus IT, and helping people work with technology." />
+      <PageIntro label="Work experience" title="Where I’ve learned by doing." description="Experience building applications, validating data, automating workflows, and helping people solve technical problems." />
       <section className="shell section-pad space-y-8" aria-label="Employers and roles">
         {experience.map(({ employer, location, roles }, index) => {
           const { label, icon: Icon, accent } = employerStyles[index];
