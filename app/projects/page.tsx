@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { PageIntro } from "@/components/site";
 import { ProjectCard } from "@/components/project-card";
 import { projects } from "@/content/portfolio";
 
-export const metadata: Metadata = {
-  title: "Technical Projects",
-  description: "Five software projects across manufacturing, security, education, and reporting, with Arjun Nyein’s contributions and the technologies used.",
-};
+export const metadata = pageMetadata(
+  "Technical Projects",
+  "Five software projects across manufacturing, security, education, and reporting, with Arjun Nyein’s contributions and the technologies used.",
+  "/projects",
+);
 
 export default function Projects() {
   return (

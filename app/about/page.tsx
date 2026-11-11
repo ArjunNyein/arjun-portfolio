@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Dumbbell, Wrench, Sparkles, Terminal, Utensils } from "lucide-react";
@@ -7,10 +7,11 @@ import { SignalTrace } from "@/components/signal-trace";
 import { ResumeLink } from "@/components/site";
 import { profile, toolbox } from "@/content/portfolio";
 
-export const metadata: Metadata = {
-  title: "About Me",
-  description: "Meet Arjun Nyein, a Computer Science student at UW–Parkside. Learn how he works and what he enjoys outside technology.",
-};
+export const metadata = pageMetadata(
+  "About Me",
+  "Meet Arjun Nyein, a Computer Science student at UW–Parkside. Learn how he works and what he enjoys outside technology.",
+  "/about",
+);
 
 export default function About() {
   return (

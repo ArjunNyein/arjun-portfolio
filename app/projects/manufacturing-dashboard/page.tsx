@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
 import { dashboardWorkflow } from "@/content/portfolio";
 
-export const metadata: Metadata = {
-  title: "Manufacturing Dashboard Case Study",
-  description: "How an IIS-hosted dashboard turns structured CSV data into automatically refreshed production views.",
-};
+export const metadata = pageMetadata(
+  "Manufacturing Dashboard Case Study",
+  "How an IIS-hosted dashboard turns structured CSV data into automatically refreshed production views.",
+  "/projects/manufacturing-dashboard",
+);
 
 export default function ManufacturingDashboard() {
   return (
@@ -63,7 +64,7 @@ export default function ManufacturingDashboard() {
           <section className="max-w-[870px] space-y-2">
             <p className="eyebrow text-teal">04 / Results</p>
             <h2 className="text-[28px] sm:text-[34px]">Production views stay current</h2>
-            <p className="text-muted">Employees can check current production information on the shared displays while the dashboard handles updates in the background.</p>
+            <p className="text-muted">The dashboard replaced manually updated Excel production displays for 150+ shop-floor employees. Employees can check current production information while the dashboard refreshes the views every three minutes.</p>
           </section>
           <Link href="/projects" className="inline-link"><ArrowLeft size={15} aria-hidden="true" /> Back to projects</Link>
         </div>

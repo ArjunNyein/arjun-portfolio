@@ -45,7 +45,7 @@ export const projects: readonly Project[] = [
     id: "ip-threat-assessment",
     title: "IP Threat Assessment",
     category: "Cybersecurity / Internal web app",
-    summary: "One IP address, two levels of detail.",
+    summary: "Threat intelligence from three providers, brought into one view.",
     role: "Built the React frontend and integrated the FastAPI endpoints.",
     contribution: "I worked alongside a cybersecurity intern on an internal tool for the IT team. I built the React and TypeScript frontend and connected it to the FastAPI backend my teammate developed.",
     outcome: "The tool brings together VirusTotal, Shodan, and GreyNoise findings in a general summary and a more detailed technical view.",

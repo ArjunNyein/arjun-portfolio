@@ -18,6 +18,7 @@ export function ResumeLink({ variant = "primary" }: { variant?: "primary" | "dar
 
 export function SiteFooter() {
   const links = [
+    { label: "Résumé", href: profile.resume },
     { label: "GitHub", href: profile.github },
     { label: "LinkedIn", href: profile.linkedin },
     { label: "Email", href: `mailto:${profile.email}` },
@@ -29,7 +30,7 @@ export function SiteFooter() {
         <p className="font-display text-lg font-bold text-white">Find me online</p>
         <nav aria-label="Contact links" className="flex flex-wrap gap-x-5">
           {links.map(({ label, href }) => (
-            <a key={label} href={href} target={href.startsWith("https:") ? "_blank" : undefined} rel={href.startsWith("https:") ? "noopener noreferrer" : undefined} className="inline-link text-mint">
+            <a key={label} href={href} download={href === profile.resume || undefined} target={href.startsWith("https:") ? "_blank" : undefined} rel={href.startsWith("https:") ? "noopener noreferrer" : undefined} className="inline-link text-mint">
               {label} <ArrowUpRight size={14} aria-hidden="true" />
             </a>
           ))}

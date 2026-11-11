@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import "@fontsource-variable/inter/wght.css";
 import "@fontsource-variable/space-grotesk/wght.css";
 import "@fontsource/ibm-plex-mono/latin-400.css";
@@ -9,6 +10,8 @@ import { SiteFooter } from "@/components/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  ...pageMetadata("Arjun Nyein | Software Developer", "Software projects across manufacturing, security, education, and business workflows.", "/"),
+  metadataBase: new URL("https://arjun-portfolio-gray-five.vercel.app"),
   title: { default: "Arjun Nyein | Software Developer", template: "%s | Arjun Nyein" },
   description: "Arjun Nyein is a Computer Science student and software developer building practical applications for manufacturing, IT, and business workflows.",
 };

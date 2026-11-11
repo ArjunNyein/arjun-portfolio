@@ -21,7 +21,8 @@ export function ProjectCard({ project, index, featured = false, summary }: { pro
             {project.stack.map((technology) => <li key={technology} className="tag">{technology}</li>)}
           </ul>
         )}
-        <div className="mt-2">
+        <div className="mt-2 flex flex-wrap gap-x-5">
+          {project.source && <a href={project.source} target="_blank" rel="noopener noreferrer" className="inline-link">View source <ArrowUpRight size={15} aria-hidden="true" /></a>}
           {project.caseStudy ? (
             <Link href={project.caseStudy} className="inline-link">Read case study <ArrowUpRight size={15} aria-hidden="true" /></Link>
           ) : <ProjectPreview project={project} />}

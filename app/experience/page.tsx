@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { ArrowUpRight, BriefcaseBusiness, Building2, ChartNoAxesCombined, ClipboardCheck, Code2, Factory, GraduationCap, Headset, MapPin, UsersRound } from "lucide-react";
 import { PageIntro } from "@/components/site";
@@ -6,10 +6,11 @@ import { SignalTrace } from "@/components/signal-trace";
 import { ProjectArt } from "@/components/project-art";
 import { experience, type Role } from "@/content/portfolio";
 
-export const metadata: Metadata = {
-  title: "Work Experience",
-  description: "Arjun Nyein’s work across Twin Disc, UW–Parkside campus technology and student support, and a HARIBO industry project.",
-};
+export const metadata = pageMetadata(
+  "Work Experience",
+  "Arjun Nyein’s work across Twin Disc, UW–Parkside campus technology and student support, and a HARIBO industry project.",
+  "/experience",
+);
 
 const employerStyles = [
   { label: "Corporate IT internship", icon: Factory, accent: "text-mint" },
