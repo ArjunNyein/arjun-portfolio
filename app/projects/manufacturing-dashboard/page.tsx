@@ -1,3 +1,4 @@
+import { DashboardDemo } from "@/components/dashboard-demo";
 import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
@@ -61,6 +62,7 @@ export default function ManufacturingDashboard() {
               Simplified illustration. Internal data sources and system screens are omitted.
             </figcaption>
           </figure>
+          <DashboardDemo />
           <section className="max-w-[870px] space-y-2">
             <p className="eyebrow text-teal">04 / Results</p>
             <h2 className="text-[28px] sm:text-[34px]">Production views stay current</h2>

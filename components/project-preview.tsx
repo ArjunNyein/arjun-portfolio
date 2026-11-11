@@ -2,6 +2,7 @@
 
 import { useId, useRef } from "react";
 import { ArrowUpRight, X } from "lucide-react";
+import { GradTrackerDemo } from "@/components/gradtracker-demo";
 import type { Project } from "@/content/portfolio";
 
 export function ProjectPreview({
@@ -48,6 +49,7 @@ export function ProjectPreview({
         <p className="mt-4 rounded-md bg-mist px-3 py-2 font-mono text-xs leading-relaxed text-teal">
           {project.stack.join(" · ")}
         </p>
+        {project.id === "gradtracker" && <GradTrackerDemo />}
         {project.source && (
           <a className="inline-link mt-2" href={project.source} target="_blank" rel="noopener noreferrer">
             View source on GitHub <ArrowUpRight size={15} aria-hidden="true" />

@@ -9,7 +9,7 @@ export function ProjectCard({ project, index, featured = false, summary }: { pro
   const Heading = detailed ? "h2" : "h3";
 
   return (
-    <article id={detailed ? project.id : undefined} className={`card card-hover project-story min-w-0 scroll-mt-5 p-4 sm:p-5 ${featured ? "md:col-span-2 lg:grid lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-10" : ""}`}>
+    <article tabIndex={detailed ? -1 : undefined} id={detailed ? project.id : undefined} className={`card card-hover project-story min-w-0 scroll-mt-5 p-4 sm:p-5 ${featured ? "md:col-span-2 lg:grid lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-10" : ""}`}>
       <ProjectArt id={project.id} />
       <div className={`flex flex-col items-start pt-5 ${featured ? "lg:py-4" : ""}`}>
         <p className="eyebrow text-teal">{detailed && `${String(index + 1).padStart(2, "0")} / `}{project.category}</p>
